@@ -1,7 +1,7 @@
 // https://github.com/mozibrishu/basic-js-assignment
 
 
-// 1
+// Function(1)
 function kilometerToMeter(kilometer) {
     //Distance can not be a negative number
     if (isNonNegetiveNumber(kilometer)) {
@@ -14,7 +14,7 @@ function kilometerToMeter(kilometer) {
 }
 
 
-// 2
+// Function(2)
 function budgetCalculator(numOfWatch, numOfPhone, numOfLaptop) {
     // number of product can not be negative or float
     if (isNonNegetiveIntegerNumber(numOfWatch) &&
@@ -30,7 +30,7 @@ function budgetCalculator(numOfWatch, numOfPhone, numOfLaptop) {
 }
 
 
-// 3
+// Function(3)
 function hotelCost(numOfDay) {
     // number of day can not be negative or float.
     if (isNonNegetiveIntegerNumber(numOfDay)) {
@@ -52,7 +52,7 @@ function hotelCost(numOfDay) {
 }
 
 
-// 4
+// Function(4)
 function megaFriend(arrOfFriends) {
     if (arrOfFriends.length < 1) {
         console.log("Empty Array");
@@ -65,13 +65,18 @@ function megaFriend(arrOfFriends) {
                 megaName = checkName;
             }
         }
-        return megaName;
+        if(megaName.length == 0){
+            console.log("Name should be atleast one character.");
+        }else{
+            return megaName;
+        }
+        
     }
 }
 
 
 
-// Functions for checking Edge Cases.
+// Functions for checking validity of inputs.
 
 function isNonNegetiveNumber(input) {
     if (isNaN(input) || (input < 0)) {
@@ -85,7 +90,8 @@ function isNonNegetiveNumber(input) {
 
 function isNonNegetiveIntegerNumber(input) {
     if (isNonNegetiveNumber(input)) {
-        if ((input % 1) == 0) {
+        // checking whether input is integer or float
+        if ((input % 1) == 0) { 
             return true;
         }
         else {
